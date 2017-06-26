@@ -1,0 +1,41 @@
+binary_search(a, i, j, key) {
+  size = j – i + 1
+  if size <= 0 {
+    return -1
+  }
+  mid = (j + i) / 2
+  if key == a[mid] {
+    return mid
+  }
+  if key < a[mid] {
+    return binary_search(a, i, mid-1, key)
+  } else {
+    return binary_search(a, mid+1, j, key)
+  }
+}
+
+mergesort(a, i, j) {
+  size = j - i + 1
+  if size <= 1 {
+    return
+  }
+  mid = (i + j) / 2
+  mergesort(a, i, m)
+  mergesort(a, m+1, j)
+  merge(a, i, m, j)
+}
+
+recursive_selection_sort(a, i, j) {
+  size = j - i + 1
+  if size <= 1 {
+    return
+  }
+  min_index = i
+  for k = i to j {
+    if a[k] < a[min_index] {
+      min_index = k
+    }
+  }
+  swap a[i], a[min_index]
+  recursive_selection_sort(a, i+1, j)
+}

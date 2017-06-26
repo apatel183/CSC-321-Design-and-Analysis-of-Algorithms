@@ -1,0 +1,56 @@
+<!doctype HTML>
+<html>
+
+<head>
+<meta charset="utf-8">
+<style>
+  body {font-family: Calibri; Georgia; font-size: 11pt; }
+  h1, h2, h3 {font-family: Cambria; Arial; Helvetica; font-weight: lighter}
+  h1 {color: #4E2A84}
+  h2, h3 {color: #836EAA}
+  h1 {font-size: 26pt; }
+  h2 {font-size: 14pt; }
+  h3 {font-size: 12pt; }
+  pre {font-weight: bold}
+  .code {font-family: Courier New; font-weight: bold; }
+  table {border-radius: 5px, border: 2px solid black; }
+	td, th {border: 1px solid gray; }
+	ul.innerlist {list-style: none; margin: 0; padding: 0}
+</style>
+</head>
+<body>
+<h1>CSC 321/Design and Analysis of Algorithms<br />Homework 5</h1>
+<h2>Due: Friday, February 24th, 11:59pm CT</h2>
+<hr />
+<h2>Implement quick sort (30 points)</h2>
+<p>
+Using the pseudocode in the textbook as a guide, implement <strong>in Java</strong> (yes, this time you must use Java) the randomized quick sort algorithm as a method.  You will also, of course, need to implement the methods it relies on.
+</p>
+<p>
+Write a main method that:
+<ol>
+<li>generates an array of length 100,000 with integer values randomly generated between -10<sup>6</sup> and 10<sup>6</sup>
+<li>records the start time in milliseconds
+<li>calls quick sort
+<li>records the end time and computes and prints the time the sort took to complete
+<li>records the start time in milliseconds
+<li>calls quick sort a second time on the same array, which is now sorted
+<li>records the end time and computes and prints the time that call to the sort took to complete
+</ol>
+You should see two similar times.  If the second time is larger, you're probably not implementing the randomized partition algorithm correctly
+</p>
+<h2>Implement a find median algorithm (20 points)</h2>
+<p>
+Using the pseudocode algorithm presented in class on February 20th, implement a linear-time algorithm <strong>in Java</strong> for finding the median of an array.  Once again, write a main method that generates an array in the same way as requested in the previous program to test your median-finding method.
+</p>
+<h2>Extra credit: The Bucket Challenge (10 points)</h2>
+<p>
+You have a bucket holding 1 liter of water.  Every hour, you remove half of the remaining water.  In hours, how long will it take you to empty the bucket?
+</p>
+<h2>Submission instructions</h2>
+<p>
+Create one zip file containing both Java source files and submit that zip file into the homework 5 drop box.
+</p>
+<p><em>Last updated Monday, February 20th, 2017.</em></p>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype HTML>
+<html>
+
+<head>
+<meta charset="utf-8">
+<style>
+  body {font-family: Calibri, Georgia; font-size: 11pt; }
+  h1, h2, h3 {font-family: Cambria, Arial, Helvetica; font-weight: lighter}
+  h1 {color: #4E2A84}
+  h2, h3 {color: #836EAA}
+  h1 {font-size: 26pt; }
+  h2 {font-size: 14pt; }
+  h3 {font-size: 12pt; }
+  pre {font-weight: bold}
+  .code {font-family: Courier New; font-weight: bold; }
+  table {border-radius: 5px; border: 2px solid black; }
+	td, th {border: 1px solid gray; }
+	ul.innerlist {list-style: none; margin: 0; padding: 0}
+</style>
+</head>
+
+<body>
+<div id="content">
+<h1>CSC 321/Design and Analysis of Algorithms<br />Homework 2</h1>
+<h2>Due: Friday, January 20th, 11:59pm CT</h2>
+<hr />
+<h2>Hybrid sort (30 points)</h2>
+<p>
+We did not discuss insertion sort in detail in class but you can find the algorithm in the textbook and implemented in many languages on the web.  I did mention that its worst case running time is O(n<sup>2</sup>) but, in certain cases (e.g., when the original array is already sorted), it runs in time O(n).  In this programming exercise, write a program that implements a <strong>hybrid sort</strong>, which is a method that, on a sub-array of length 33 or higher, divides the sub-array, calls itself recursively, and merges the sorted sub-arrays; if the length is less than 33, it uses insertion sort on the sub-array.  You will have to adapt whatever insertion sort you use to work on a sub-array.
+</p>
+<h2>Benchmarking sorts (40 points)</h2>
+<p>
+Instead of an analytic approach to running time, in this exercise you are going to use an empirical approach.  Write a program that compares the performance of insertion sort, merge sort, and the hybrid sort.  Do so by generating integer arrays of five lengths: 1024, 4096, 16384, 65536, and 262144.  Fill each with values randomly chosen from -10<sup>6</sup> to 10<sup>6</sup>.  Time and run each sort.
+</p>
+<p>
+In whatever language you're using, there should be a way to get the current system time in milliseconds.  To benchmark a sort, get the time before the call, call the sort, get the time after, and compute the difference in the times.
+</p>
+<p>
+Your output should consist of a table where each row has the times for a sort and each column the length of an array.  Make it easy to read and understand (e.g., make sure the numeric values right-align).
+</p>
+<p><strong>Be careful!</strong>  When you randomly fill an array with values, make sure that you sort a copy of it.  A mistake often made is that the code generates the array, sorts it with the first sort, and then continues to sort the same (now sorted) array with the other two sorts.  All three sorts must sort the array as it was originally generated.
+</p>
+<h2>Submission instructions</h2>
+<p>
+Create once source code file for your hybrid sort program and one for the benchmark program.  Place each into its own zip file (D2L does not like accepting, for example, straight .java files) and submit into the appropriate drop box.
+</p>
+<p><em>Last updated Wednesday, January 11th, 2017.</em></p>
+</body>
+</html>

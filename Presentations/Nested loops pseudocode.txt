@@ -1,0 +1,42 @@
+Gauss(n) {
+  sum = 0
+  for i = 1 to n {
+    sum += i
+  }
+  return sum
+}
+
+table_sum(t) {
+  n = t.size
+  sum = 0
+  for i = 1 to n {
+    for j = 1 to n {
+      sum += t[i][j]
+    }
+  }
+  return sum
+}
+
+triangular_table_sum(t) {
+  n = t.size
+  sum = 0
+  for i = 1 to n {
+    for j = i to n {
+      sum += t[i][j]
+    }
+  }
+  return sum
+}
+
+selection_sort(a) {
+  n = a.size
+  for i = 1 to n {
+    min_index = i
+    for j = i to n {
+      if a[j] < a[min_index] {
+        min_index = j
+      }
+    }
+    swap a[i], a[min_index]
+  }
+}

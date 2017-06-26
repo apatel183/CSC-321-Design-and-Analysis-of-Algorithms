@@ -1,0 +1,106 @@
+<!doctype HTML>
+<html>
+
+<head>
+<meta charset="utf-8">
+<style>
+  body {font-family: Calibri; Georgia; font-size: 11pt; }
+  h1, h2, h3 {font-family: Cambria; Arial; Helvetica; font-weight: lighter}
+  h1 {color: #4E2A84}
+  h2, h3 {color: #836EAA}
+  h1 {font-size: 26pt; }
+  h2 {font-size: 14pt; }
+  h3 {font-size: 12pt; }
+  pre {font-weight: bold}
+  .code {font-family: Courier New; font-weight: bold; }
+  table {border-radius: 5px, border: 2px solid black; }
+	td, th {border: 1px solid gray; }
+	ul.innerlist {list-style: none; margin: 0; padding: 0}
+</style>
+</head>
+<body>
+<h1>CSC 321/Design and Analysis of Algorithms<br />Homework 3</h1>
+<h2>Due: Thursday, February 2nd, 11:59pm CT</h2>
+<hr />
+<h2>Runtime analysis for loops (20 points)</h2>
+<p>
+Below you will find pseudo-code for an algorithm that counts the number of pairs of identical values in an array.  In analyzing the running tome for it, we decide to count how often the equality test <strong><code>if a[i] == a[j]</code></strong> is executed for an array of length <em>n</em>.  Please:
+<ol type="a">
+<li>Write down the double sum arising from the nested loops.</li>
+<li>Determine and write down the closed-form arithmetic formula for that double sum.</li>
+</ol>
+<pre>
+countIdenticalPairs(a) {
+  n = a.size
+  count = 0
+  for i = 1 to n {
+    for j = i to n {
+      if a[i] == a[j] {
+        count += 1
+      }
+    }
+  }
+  return count
+}
+</pre>
+</p>
+<p>
+Realizing that the first time through the inner loop each time, we are comparing a value to itself and so counting it (and we shouldn't), we change the lower index on the inner loop.  Once again, for this algorithm, please:
+<ol type="a">
+<li>Write down the double sum arising from the nested loops.</li>
+<li>Determine and write down the closed-form arithmetic formula for that double sum.</li>
+</ol>
+<pre>
+countIdenticalPairs(a) {
+  n = a.size
+  count = 0
+  for i = 1 to n {
+    for j = i+1 to n {
+      if a[i] == a[j] {
+        count += 1
+      }
+    }
+  }
+  return count
+}
+</pre>
+</p>
+<h2>Runtime analysis for recursion (20 points)</h2>
+<p>
+Below you will find pseudo-code for an algorithm that finds the maximum value in an array.    In analyzing the running tome for it, we decide to count how often the comparison <strong><code>if leftmax &gt; rightmax </code></strong> is executed for an array of length <em>n</em>.  Please:
+<ol type="a">
+<li>Write down the recurrence relation arising from the recursive calls.</li>
+<li>Determine and write down the closed-form arithmetic formula for that recurrence.  I strongly suggest using the Main Recurrence Theorem in the book.</li>
+</ol>
+<pre>
+findMax(a, i, j) {
+  if i == j {
+    return a[i]
+  }
+  mid = (i + j) / 2
+  leftmax = findMax(a, i, mid)
+  rightmax = findMax(a, mid+1, j)
+  if leftmax &gt; rightmax {
+    return leftmax
+  } else {
+    return rightmax
+  }
+}
+</pre>
+</p>
+<h2>Counting inversions (35 points)</h2>
+<p>
+For an array of values, an inversion is a pair of numbers that are in the wrong order relative to a sorted array.  For example, if <code>a = [4,3,5,2,1]</code>, the pair of values 4 at index 1 and 2 at index 4 are an inversion.  For example, the array a has 8 inverted pairs: (4,3), (4,2), (4,1), (3,2), (3,1), (5,2), (5,1), (2,1).
+<ol type="a">
+<li>How many inversions are there in the array [n, n-1, n-2, ..., 2, 1]? Explain your answer.</li>
+<li>Implement a (simple) algorithm (that is, write a program) that counts the number of inversions in a list.  Use the result from (a) to test your algorithm.
+</li>
+<li>What is the asymptotic running time of your algorithm?</li>
+</ol>
+<h2>Submission instructions</h2>
+<p>
+Create one source code file for your inversion counting program and place it into a zip file.  Place the answers for the other questions into a document and place it into a zip file.  Submit each zip file in its proper drop box slot.
+</p>
+<p><em>Last updated Thursday, January 26th, 2017.</em></p>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype HTML>
+<html>
+
+<head>
+<meta charset="utf-8">
+<style>
+  body {font-family: Calibri; Georgia; font-size: 11pt; }
+  h1, h2, h3 {font-family: Cambria; Arial; Helvetica; font-weight: lighter}
+  h1 {color: #4E2A84}
+  h2, h3 {color: #836EAA}
+  h1 {font-size: 26pt; }
+  h2 {font-size: 14pt; }
+  h3 {font-size: 12pt; }
+  pre {font-weight: bold}
+  .code {font-family: Courier New; font-weight: bold; }
+  table {border-radius: 5px, border: 2px solid black; }
+	td, th {border: 1px solid gray; }
+	ul.innerlist {list-style: none; margin: 0; padding: 0}
+</style>
+</head>
+<body>
+<h1>CSC 321/Design and Analysis of Algorithms<br />Homework 4</h1>
+<h2>Due: Friday, February 17th, 11:59pm CT</h2>
+<hr />
+<h2>Computing the transpose of a directed graph (30 points)</h2>
+<p>
+A directed graph is a graph in which every edge has a direction, so it is a pair (u,v) of vertices, pointing from u to v, rather than a set {u,v}, which is what an edge in an undirected graph is. (Section 2.5 has more information.) Given a directed graph G = (V,E), we can define its tranpose, tr(G), as the graph in which the direction of every edge of G has been reversed.
+</p>
+<p>
+For the following problems, let n = |V| (the number of vertices), and m = |E| (the number of edges).
+<ol type="a">
+<li>What is the asymptotic running time of an algorithm calculating tr(G) from G in the adjacency matrix model? Express your answer in n and m as appropriate.</li>
+<li>What is the asymptotic running time of an algorithm calculating tr(G) from G in the adjacency list model? Express your answer in n and m as appropriate.</li>
+<li>Implement tr(G) for the adjacency list model and test-run it on some small sample graphs that I will provide.</li>
+</ol>
+</p>
+<h2>Depth-first search (20 points)</h2>
+<p>
+Implement the basic Depth-First Search algorithm for traversing a graph given by an adjacency list. Print the vertices in the order that you encounter them. For this problem you can assume that the graph is connected. Hint: this is very close to the algorithm on page 175 but do not use any global variables.
+</p>
+<h2>Topological sort (25 points)</h2>
+<p>
+Implement topological sort for sorting an input consisting of edges in an acyclic directed graph.  I will provide test data.  The output should be a list of the vertices in the graph in topological order.
+</p>
+<h2>Submission instructions</h2>
+<p>
+Create one zip file containing a document with the answers to the non-programming questions and your three source code files, one for the graph transpose program, one for the DFS program, and one for the topological sort.  Submit that zip file into the homework 4 drop box.
+</p>
+<p><em>Last updated Wednesday, February 8th, 2017.</em></p>
+</body>
+</html>

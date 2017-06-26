@@ -1,0 +1,28 @@
+merge(a, i, m, j) {
+  p = i
+  q = m + 1
+  r = i
+  while p <= m and q <= j {
+    if a[p] <= a[q] {
+      c[r] = a[p]
+      p += 1
+    } else {
+      c[r] = a[q]
+      q += 1
+    }
+    r += 1
+  }
+  while p <= m {
+    c[r] = a[p]
+    p += 1
+    r += 1
+  }
+  while q <= j {
+    c[r] = a[q]
+    q += 1
+    r += 1
+  }
+  for r = i to j {
+    a[r] = c[r]
+  }
+}
